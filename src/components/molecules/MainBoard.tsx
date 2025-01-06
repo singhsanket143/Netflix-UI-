@@ -1,15 +1,24 @@
+"use client";
+import { useRouter } from "next/navigation"
 import { AiOutlineInfoCircle } from "react-icons/ai"
 
 export const MainBoard = () => {
+    const router = useRouter();
+
+    function handleClick() {
+        router.push(`/stream/1736180950323`);
+    }
+
     return (
         <div
-            className="relative"
+            className="relative h-[52vw]"
         >
 
             <video 
                 autoPlay
                 muted
                 loop
+                className="w-full h-[52vw] brightness-50 object-cover"
                 src={"/videos/1.mkv"}
 
             />
@@ -39,6 +48,7 @@ export const MainBoard = () => {
                     </button>
 
                     <button
+                        onClick={handleClick}
                         className="bg-white text-black rounded py-2 px-4 text-lg font-semibold flex flex-row items-center mt-10 ml-4 hover:bg-opacity-90 transition-all"
                     >
                         Play Now
